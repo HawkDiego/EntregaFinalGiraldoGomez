@@ -54,6 +54,7 @@ export const MenuTogle = () => {
                 src="/icon.jpg"
                 objectFit="cover"
                 boxSize={['60px', '80px']}
+                borderRadius='20px'
               />
             </Flex>
           </DrawerHeader>
