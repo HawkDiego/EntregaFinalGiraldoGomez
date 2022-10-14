@@ -58,7 +58,7 @@ export const MenuTogle = () => {
             </Flex>
           </DrawerHeader>
 
-          <DrawerBody textAlign="center">
+          <DrawerBody textAlign="center" color='#525151'>
             <Center fontWeight="bold" mb={5} as="a">
               Home
             </Center>

@@ -13,7 +13,6 @@ export const FlexNavMobile = () => {
         my={5}
         w='100%'
         fontSize={25}
-        color='grayDark'
       >
         <BiCart />
       </Button>
