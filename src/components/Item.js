@@ -4,7 +4,7 @@ import { BsPlus } from 'react-icons/bs'
 
 export const Item = () => {
   return (
-    <Flex direction='column' align='center'>
+    <Flex direction='column' align='center' mt='45px' gap='25px'>
       <ListItem display='grid' gridTemplateRows='1fr auto'>
         <Image src='/buso.webp' alt='ropa' w='300px' h='400px' />
         <Flex direction='column' m='0 5px' fontSize='20px' fontWeight='bold'>

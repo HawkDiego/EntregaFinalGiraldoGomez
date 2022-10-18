@@ -59,22 +59,21 @@ export const MenuTogle = () => {
             </Flex>
           </DrawerHeader>
 
-          <DrawerBody color='#525151'>
-            <Box fontWeight='bold' mb={5}>
-              Home
-            </Box>
+          <DrawerBody
+            color='#525151'
+            fontWeight='bold'
+            gap={5}
+            display='flex'
+            flexDirection='column'
+            fontSize='22px'
+          >
+            <Box>Home</Box>
 
-            <Box fontWeight='bold' mb={5}>
-              Shop
-            </Box>
+            <Box>Shop</Box>
 
-            <Box fontWeight='bold' mb={5}>
-              Contact
-            </Box>
+            <Box>Contact</Box>
 
-            <Box fontWeight='bold' mb={5}>
-              Contact
-            </Box>
+            <Box>Contact</Box>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

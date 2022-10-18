@@ -8,6 +8,7 @@ export const NavFlexDesk = ({dato}) => {
       aria-label={dato}
       my={5}
       w='100%'
+      fontSize='20px'
     >
       {dato}
     </Button>

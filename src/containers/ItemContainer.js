@@ -4,7 +4,7 @@ import { Item } from '../components/Item'
 
 export const ItemListContainer = () => {
   return (
-    <List mt={3}>
+    <List>
       <Item />
     </List>
   )
