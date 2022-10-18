@@ -9,7 +9,6 @@ import {
   Button,
   useDisclosure,
   Text,
-  Center,
   Flex,
   Image,
   Box,

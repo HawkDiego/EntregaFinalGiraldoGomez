@@ -2,7 +2,6 @@ import { Grid, Image, Flex } from '@chakra-ui/react'
 import React from 'react'
 import { FlexNavMobile } from '../components/NavFlexMobile'
 import { NavFlexDesk } from '../components/NavFlexDesk'
-import { BiBorderRadius } from 'react-icons/bi'
 
 const NavBarStore = () => {
   const data = ['Home', 'Shop', 'About', 'Contact']
