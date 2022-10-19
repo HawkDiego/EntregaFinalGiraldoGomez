@@ -71,7 +71,7 @@ export const MenuTogle = () => {
 
             <Box>Shop</Box>
 
-            <Box>Contact</Box>
+            <Box>About</Box>
 
             <Box>Contact</Box>
           </DrawerBody>

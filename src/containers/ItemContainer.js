@@ -1,11 +1,20 @@
 import React from 'react'
-import { List } from '@chakra-ui/react'
+import { Wrap } from '@chakra-ui/react'
 import { Item } from '../components/Item'
 
 export const ItemListContainer = () => {
   return (
-    <List>
+    <Wrap
+      as='section'
+      justify='center'
+      align='center'
+      direction={['column', 'column', 'column', 'row']}
+      spacingX='15px'
+      mt='30px'
+    >
       <Item />
-    </List>
+      <Item />
+      <Item />
+    </Wrap>
   )
 }

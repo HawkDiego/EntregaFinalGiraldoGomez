@@ -23,7 +23,7 @@ const NavBarStore = () => {
         />
       </Flex>
 
-      <Flex display={['none', 'none', 'flex', 'flex']} justify='flex-end'>
+      <Flex display={['none', 'none', 'flex']} justify='flex-end'>
         {data.map((dato, i) => (
           <NavFlexDesk key={i} dato={dato} />
         ))}
