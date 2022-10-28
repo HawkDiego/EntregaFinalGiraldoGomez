@@ -3,7 +3,7 @@ import React from 'react'
 import { FlexNavMobile } from '../components/NavFlexMobile'
 import { NavFlexDesk } from '../components/NavFlexDesk'
 import { CartNav } from '../components/CartNav'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 const NavBarStore = () => {
   const data = ['Hombre', 'Mujer', 'Niño']
@@ -17,12 +17,14 @@ const NavBarStore = () => {
         as='nav'
       >
         <Flex align='center' m='10px 0px 10px 25px'>
-          <Image
-            src='/icon.jpg'
-            objectFit='cover'
-            boxSize={['70px', '70px', '80px']}
-            borderRadius='20'
-          />
+          <Link to='/'>
+            <Image
+              src='/icon.jpg'
+              objectFit='cover'
+              boxSize={['70px', '70px', '80px']}
+              borderRadius='20'
+            />
+          </Link>
         </Flex>
 
         <Flex display={['none', 'none', 'flex']} justify='center'>

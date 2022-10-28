@@ -1,8 +1,11 @@
 import React from 'react'
 import { Wrap } from '@chakra-ui/react'
 import { Item } from '../components/Item'
+import { products } from '../api/getProducts'
+
 
  const ItemContainer = () => {
+  console.log(products)
   return (
     <Wrap
       as='section'
@@ -12,9 +15,8 @@ import { Item } from '../components/Item'
       spacingX='15px'
       mt='30px'
     >
-      <Item />
-      <Item />
-      <Item />
+      {products.map(product => (<Item props={product} key={product.id} />))}
+  
     </Wrap>
   )
 }
