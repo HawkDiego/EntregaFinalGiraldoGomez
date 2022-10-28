@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, Wrap } from '@chakra-ui/react'
+import { Box } from '@chakra-ui/react'
 import { Item } from '../components/Item'
 import { products } from '../api/getProducts'
 
@@ -10,10 +10,9 @@ const ItemContainer = () => {
       justifyContent='center'
       alignItems='center'
       direction={['column', 'column', 'column', 'row']}
-      gap={[20, 20, 20, 0]}
+      gap={[20, 20, 20, 15]}
       flexWrap='wrap'
       mt='30px'
-      gap={15}
       display={['flex', 'flex', 'flex', 'grid']}
       gridTemplateColumns={['', '', '', 'repeat(3, auto)']}
     >

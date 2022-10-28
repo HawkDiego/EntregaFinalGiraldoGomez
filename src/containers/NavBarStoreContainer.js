@@ -36,6 +36,7 @@ const NavBarStore = () => {
 
         <FlexNavMobile />
       </Grid>
+      
       <Outlet />
     </>
   )

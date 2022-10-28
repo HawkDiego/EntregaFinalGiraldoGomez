@@ -3,8 +3,7 @@ import { Grid, Flex, Image, Box, Button } from '@chakra-ui/react'
 import { BsPlus } from 'react-icons/bs'
 import { Link } from 'react-router-dom'
 
-export const Item = ({product}) => {
-
+export const Item = ({ product }) => {
   return (
     <Flex
       direction='column'
@@ -15,7 +14,13 @@ export const Item = ({product}) => {
     >
       <Grid templateRows='1fr auto'>
         <Link to={`/product/${product.id}`}>
-          <Image src={product.img} alt='ropa' w='300px' h='350px' borderRadius='4px' />
+          <Image
+            src={product.img}
+            alt='ropa'
+            w='300px'
+            h='350px'
+            borderRadius='4px'
+          />
         </Link>
         <Flex direction='column' m='0 5px' fontSize='20px' fontWeight='bold'>
           <Flex justify='space-between' mt='10px' mb='0'>

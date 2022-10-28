@@ -66,10 +66,12 @@ const products = [
 
 const getProductsById = (id)=>{
   let data = products.find(product => product.id === id)
+  return data
 }
 
 const getProductsByCategory = (category) => {
   let data = products.find(product => product.category === category)
+  return data
 
 }
 
