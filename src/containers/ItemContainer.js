@@ -1,25 +1,27 @@
 import React from 'react'
-import { Wrap } from '@chakra-ui/react'
+import { Box, Wrap } from '@chakra-ui/react'
 import { Item } from '../components/Item'
 import { products } from '../api/getProducts'
 
-
- const ItemContainer = () => {
-  console.log(products)
+const ItemContainer = () => {
   return (
-    <Wrap
+    <Box
       as='section'
-      justify='center'
-      align='center'
+      justifyContent='center'
+      alignItems='center'
       direction={['column', 'column', 'column', 'row']}
-      spacingX='15px'
+      gap={[20, 20, 20, 0]}
+      flexWrap='wrap'
       mt='30px'
+      gap={15}
+      display={['flex', 'flex', 'flex', 'grid']}
+      gridTemplateColumns={['', '', '', 'repeat(3, auto)']}
     >
-      {products.map(product => (<Item props={product} key={product.id} />))}
-  
-    </Wrap>
+      {products.map((product) => (
+        <Item product={product} key={product.id} />
+      ))}
+    </Box>
   )
 }
-
 
 export default ItemContainer

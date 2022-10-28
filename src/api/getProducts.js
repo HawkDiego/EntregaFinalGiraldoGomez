@@ -18,7 +18,7 @@ const products = [
     category: 'mujer',
     id: '3',
     price: '10 $',
-    img: '/mujer/buso-oso.jpeg',
+    img: '/mujer/buso-oso.jpg',
   },
   {
     name: 'Buso militar',
@@ -39,7 +39,7 @@ const products = [
     category: 'infantil',
     id: '6',
     price: '10 $',
-    img: '/infantil/buso-gris.webp',
+    img: '/infantil/buso-negro.webp',
   },
   {
     name: 'Camibuso',
@@ -53,7 +53,7 @@ const products = [
     category: 'mujer',
     id: '8',
     price: '10 $',
-    img: '/mujer/buso-gris.jpeg',
+    img: '/mujer/buso-gato.jpeg',
   },
   {
     name: 'Conjunto infantil',
