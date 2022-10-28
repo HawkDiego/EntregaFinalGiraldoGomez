@@ -67,13 +67,11 @@ export const MenuTogle = () => {
             flexDirection='column'
             fontSize='22px'
           >
-            <Box>Home</Box>
+            <Box>Hombre</Box>
 
-            <Box>Shop</Box>
+            <Box>Mujer</Box>
 
-            <Box>About</Box>
-
-            <Box>Contact</Box>
+            <Box>Niño</Box>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

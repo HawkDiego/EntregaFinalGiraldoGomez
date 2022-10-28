@@ -2,7 +2,7 @@ import React from 'react'
 import { Wrap } from '@chakra-ui/react'
 import { Item } from '../components/Item'
 
-export const ItemListContainer = () => {
+ const ItemContainer = () => {
   return (
     <Wrap
       as='section'
@@ -18,3 +18,6 @@ export const ItemListContainer = () => {
     </Wrap>
   )
 }
+
+
+export default ItemContainer

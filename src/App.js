@@ -1,15 +1,22 @@
 import React from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { ChakraProvider } from '@chakra-ui/react'
-import NavBarStore from './containers/NavBarStoreContainer'
-import { ItemListContainer } from './containers/ItemContainer'
 import theme from './theme'
-
+import NavBarStore from './containers/NavBarStoreContainer'
+import ItemContainer from './containers/ItemContainer'
 
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <NavBarStore />
-      <ItemListContainer />
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' element={<NavBarStore/>}>
+            <Route index element={<ItemContainer/>}/>
+            <Route path={'/category/:id'}/>
+            <Route path={'/product/:id'}/>
+          </Route>
+        </Routes>
+      </BrowserRouter>
     </ChakraProvider>
   )
 }
