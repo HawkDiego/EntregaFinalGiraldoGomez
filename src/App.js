@@ -21,7 +21,7 @@ function App() {
               />
               <Route
                 path={'category/:categoryId'}
-                element={ProductsCategoryContainer}
+                element={<ProductsCategoryContainer/>}
               />
             </Route>
           </Routes>

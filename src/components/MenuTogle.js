@@ -15,6 +15,7 @@ import {
 } from '@chakra-ui/react'
 
 import { MdMenu, MdClose } from 'react-icons/md'
+import { Link } from 'react-router-dom'
 
 export const MenuTogle = () => {
   const { isOpen, onOpen, onClose } = useDisclosure()
@@ -67,11 +68,15 @@ export const MenuTogle = () => {
             flexDirection='column'
             fontSize='22px'
           >
-            <Box>Hombre</Box>
-
-            <Box>Mujer</Box>
-
-            <Box>Niño</Box>
+            <Link to='/category/hombre'>
+              <Box>Hombre</Box>
+            </Link>
+            <Link to='/category/mujer'>
+              <Box>Mujer</Box>
+            </Link>
+            <Link to='/category/infantil'>
+              <Box>Infantil</Box>
+            </Link>
           </DrawerBody>
         </DrawerContent>
       </Drawer>

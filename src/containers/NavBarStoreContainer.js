@@ -6,12 +6,12 @@ import { CartNav } from '../components/CartNav'
 import { Link, Outlet } from 'react-router-dom'
 
 const NavBarStore = () => {
-  const data = ['Hombre', 'Mujer', 'Niño']
+  const data = ['Hombre', 'Mujer', 'Infantil']
   return (
     <>
       <Grid
         bg='whitesmoke'
-        templateColumns={'2fr 1fr'}
+        templateColumns={'60% 1fr'}
         color='#525151'
         alignItems='center'
         as='nav'
@@ -27,16 +27,18 @@ const NavBarStore = () => {
           </Link>
         </Flex>
 
-        <Flex display={['none', 'none', 'flex']} justify='center'>
-          {data.map((dato, i) => (
-            <NavFlexDesk key={i} dato={dato} />
-          ))}
+        <Flex display={['none', 'none', 'flex']} justify='center' gap={5}>
+          <Grid templateColumns='repeat(3, 1fr)' gap={5}>
+            {data.map((dato, i) => (
+              <NavFlexDesk key={i} dato={dato} />
+            ))}
+          </Grid>
           <CartNav />
         </Flex>
 
         <FlexNavMobile />
       </Grid>
-      
+
       <Outlet />
     </>
   )

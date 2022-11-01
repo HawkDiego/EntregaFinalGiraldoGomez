@@ -70,7 +70,7 @@ const getProductsById = (id)=>{
 }
 
 const getProductsByCategory = (category) => {
-  let data = products.find(product => product.category === category)
+  let data = products.filter(product => product.category === category)
   return data
 
 }

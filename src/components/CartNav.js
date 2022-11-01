@@ -1,19 +1,22 @@
-import { Button } from '@chakra-ui/react'
+import { Center } from '@chakra-ui/react'
 import { BiCart } from 'react-icons/bi'
 
 import React from 'react'
 
 export const CartNav = () => {
   return (
-    <Button
+    <Center
       as='a'
       variant='ghost'
       aria-label='cart'
       my={5}
-      w='100%'
+      w='50%'
       fontSize='30px'
+      _hover={{
+        opacity: '0.8',
+      }}
     >
-      <BiCart/>
-    </Button>
+      <BiCart />
+    </Center>
   )
 }
