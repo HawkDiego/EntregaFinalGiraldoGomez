@@ -68,13 +68,31 @@ export const MenuTogle = () => {
             flexDirection='column'
             fontSize='22px'
           >
-            <Link to='/category/hombre'>
+            <Link
+              to='/category/hombre'
+              onClick={() => {
+                setMenu(true)
+                onClose()
+              }}
+            >
               <Box>Hombre</Box>
             </Link>
-            <Link to='/category/mujer'>
+            <Link
+              to='/category/mujer'
+              onClick={() => {
+                setMenu(true)
+                onClose()
+              }}
+            >
               <Box>Mujer</Box>
             </Link>
-            <Link to='/category/infantil'>
+            <Link
+              to='/category/infantil'
+              onClick={() => {
+                setMenu(true)
+                onClose()
+              }}
+            >
               <Box>Infantil</Box>
             </Link>
           </DrawerBody>

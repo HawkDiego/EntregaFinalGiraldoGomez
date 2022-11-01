@@ -6,7 +6,6 @@ import { CartNav } from '../components/CartNav'
 import { Link, Outlet } from 'react-router-dom'
 
 const NavBarStore = () => {
-  const data = ['Hombre', 'Mujer', 'Infantil']
   return (
     <>
       <Grid
@@ -29,9 +28,7 @@ const NavBarStore = () => {
 
         <Flex display={['none', 'none', 'flex']} justify='center' gap={5}>
           <Grid templateColumns='repeat(3, 1fr)' gap={5}>
-            {data.map((dato, i) => (
-              <NavFlexDesk key={i} dato={dato} />
-            ))}
+            <NavFlexDesk />
           </Grid>
           <CartNav />
         </Flex>
