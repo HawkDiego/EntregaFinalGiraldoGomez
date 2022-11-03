@@ -1,4 +1,4 @@
-import { Box, Grid, Flex, Image, Button } from '@chakra-ui/react'
+import { Box, Grid, Flex, Image, Button, Spinner } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProductsById } from '../api/getProducts'
@@ -9,7 +9,9 @@ const ProductDetailContainer = () => {
   const [product, setProduct] = useState(null)
 
   useEffect(() => {
-    setProduct(getProductsById(productId))
+    getProductsById(productId).then((data) => {
+      setProduct(data)
+    })
   }, [productId])
 
   return (
@@ -49,7 +51,15 @@ const ProductDetailContainer = () => {
           </Grid>
         </Flex>
       ) : (
-        <Box>...</Box>
+        <Flex direction='column' align='center' justify='center' h='90vh'>
+          <Spinner
+            color='#525151'
+            size='xl'
+            thickness='4px'
+            speed='0.8s'
+            emptyColor='#e2e8f0'
+          />
+        </Flex>
       )}
     </>
   )

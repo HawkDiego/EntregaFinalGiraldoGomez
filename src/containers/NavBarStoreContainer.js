@@ -37,6 +37,7 @@ const NavBarStore = () => {
       </Grid>
 
       <Outlet />
+
     </>
   )
 }

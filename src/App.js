@@ -17,11 +17,11 @@ function App() {
               <Route index element={<ItemContainer />} />
               <Route
                 path={'product/:productId'}
-                element={<ProductDetailContainer/>}
+                element={<ProductDetailContainer />}
               />
               <Route
                 path={'category/:categoryId'}
-                element={<ProductsCategoryContainer/>}
+                element={<ProductsCategoryContainer />}
               />
             </Route>
           </Routes>

@@ -1,4 +1,4 @@
-const products = [
+export const products = [
   {
     name: 'Buso gris',
     category: 'hombre',
@@ -61,22 +61,21 @@ const products = [
     id: '9',
     price: '10 $',
     img: '/infantil/conjunto-infantil.webp',
-  }
+  },
 ]
 
-const getProductsById = (id)=>{
-  let data = products.find(product => product.id === id)
-  return data
-}
+export const getProductsById = (id) =>
+  new Promise((res, rej) => {
+    const response = products.find((product) => product.id === id)
+    setTimeout(() => {
+      res(response)
+    }, 3000)
+  })
 
-const getProductsByCategory = (category) => {
-  let data = products.filter(product => product.category === category)
-  return data
-
-}
-
-export {
-  getProductsByCategory,
-  getProductsById,
-  products
-}
+export const getProductsByCategory = (category) =>
+  new Promise((res, rej) => {
+    const response = products.filter((product) => product.category === category)
+    setTimeout(() => {
+      res(response)
+    }, 3000)
+  })
