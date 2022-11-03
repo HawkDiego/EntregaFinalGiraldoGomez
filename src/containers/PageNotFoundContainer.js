@@ -13,10 +13,10 @@ export const PageNotFoundContainer = () => {
       b='whitesmoke'
       color='#525151'
     >
-      <Box fontSize={['40px', '40px', '40px', '55px']} fontWeight='600'>
+      <Box fontSize={['38px', '40px', '40px', '55px']} fontWeight='600'>
         404 | Page Not Found
       </Box>
-      <Box fontSize={['20px', '20px', '20px', '25px']}>
+      <Box fontSize={['18px', '20px', '20px', '25px']}>
         Justo en una ruta que no existe... triste 🥲
       </Box>
 
