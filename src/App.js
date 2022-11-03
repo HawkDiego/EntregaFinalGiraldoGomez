@@ -6,6 +6,7 @@ import NavBarStore from './containers/NavBarStoreContainer'
 import ItemContainer from './containers/ItemContainer'
 import ProductDetailContainer from './containers/ProductDetailContainer'
 import { ProductsCategoryContainer } from './containers/ProductsCategoryContainer'
+import { PageNotFoundContainer } from './containers/PageNotFoundContainer'
 
 function App() {
   return (
@@ -23,7 +24,10 @@ function App() {
                 path={'category/:categoryId'}
                 element={<ProductsCategoryContainer />}
               />
+              <Route path={'cart'} />
+              <Route path={'checkout'} />
             </Route>
+            <Route path='*' element={<PageNotFoundContainer />} />
           </Routes>
         </BrowserRouter>
       </ChakraProvider>
