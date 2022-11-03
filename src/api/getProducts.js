@@ -69,7 +69,7 @@ export const getProductsById = (id) =>
     const response = products.find((product) => product.id === id)
     setTimeout(() => {
       res(response)
-    }, 3000)
+    }, 2500)
   })
 
 export const getProductsByCategory = (category) =>
@@ -77,5 +77,5 @@ export const getProductsByCategory = (category) =>
     const response = products.filter((product) => product.category === category)
     setTimeout(() => {
       res(response)
-    }, 3000)
+    }, 2500)
   })

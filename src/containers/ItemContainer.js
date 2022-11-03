@@ -6,7 +6,7 @@ import { products } from '../api/getProducts'
 const ItemContainer = () => {
   return (
     <>
-      <Center fontSize='40px' mt={10} ml={10} fontWeight='bold' color='#525151'>
+      <Center fontSize='40px' mt={10} fontWeight='bold' color='#525151'>
         Todos los productos
       </Center>
       <Box

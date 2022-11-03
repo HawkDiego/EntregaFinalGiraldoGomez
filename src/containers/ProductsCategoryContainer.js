@@ -15,7 +15,7 @@ export const ProductsCategoryContainer = () => {
 
   return (
     <>
-      <Center fontSize='40px' mt={10} ml={10} fontWeight='bold' color='#525151'>
+      <Center fontSize='40px' mt={10}  fontWeight='bold' color='#525151'>
         {categoryId.charAt(0).toUpperCase() + categoryId.slice(1)}
       </Center>
       <Box
