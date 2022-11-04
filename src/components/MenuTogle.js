@@ -12,6 +12,7 @@ import {
   Flex,
   Image,
   Box,
+  useColorMode,
 } from '@chakra-ui/react'
 
 import { MdMenu, MdClose } from 'react-icons/md'
@@ -22,6 +23,7 @@ export const MenuTogle = () => {
   const [menu, setMenu] = useState(true)
 
   const btnRef = React.useRef()
+  const { colorMode, toggleColorMode } = useColorMode()
   return (
     <>
       <Button
@@ -60,7 +62,7 @@ export const MenuTogle = () => {
           </DrawerHeader>
 
           <DrawerBody
-            color='#525151'
+            color={colorMode === 'dark' ? 'whitesmoke' : '#525151'}
             fontWeight='bold'
             gap={5}
             display='flex'
