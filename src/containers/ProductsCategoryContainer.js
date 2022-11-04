@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProductsByCategory } from '../api/getProducts'
 import { Item } from '../components/Item'
-import { Box, Center, Spinner } from '@chakra-ui/react'
+import { Box, Center, Spinner, useColorMode } from '@chakra-ui/react'
 
 export const ProductsCategoryContainer = () => {
   const { categoryId } = useParams()
@@ -12,10 +12,15 @@ export const ProductsCategoryContainer = () => {
       setProducts(data)
     )
   }, [categoryId])
-
+  const { colorMode } = useColorMode()
   return (
     <>
-      <Center fontSize='40px' mt={10}  fontWeight='bold' color='#525151'>
+      <Center
+        fontSize='40px'
+        mt={10}
+        fontWeight='bold'
+        color={colorMode === 'dark' ? 'whitesmoke' : '#525151'}
+      >
         {categoryId.charAt(0).toUpperCase() + categoryId.slice(1)}
       </Center>
       <Box

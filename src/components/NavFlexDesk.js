@@ -1,6 +1,7 @@
 import React from 'react'
 import { Center } from '@chakra-ui/react'
 import { Link, useParams } from 'react-router-dom'
+import { ToggleColorMode } from './ToggleColorMode'
 export const NavFlexDesk = () => {
   const { categoryId } = useParams()
 
@@ -15,7 +16,7 @@ export const NavFlexDesk = () => {
             opacity: '0.8',
           }}
           opacity={categoryId === 'hombre' ? '0.8' : '1'}
-          textDecoration={categoryId ==='hombre' ? 'underline' : ''}
+          textDecoration={categoryId === 'hombre' ? 'underline' : ''}
         >
           Hombre
         </Center>
@@ -29,7 +30,7 @@ export const NavFlexDesk = () => {
             opacity: '0.8',
           }}
           opacity={categoryId === 'mujer' ? '0.8' : '1'}
-          textDecoration={categoryId ==='mujer' ? 'underline' : ''}
+          textDecoration={categoryId === 'mujer' ? 'underline' : ''}
         >
           Mujer
         </Center>
@@ -42,12 +43,13 @@ export const NavFlexDesk = () => {
           _hover={{
             opacity: '0.8',
           }}
-          opacity={categoryId==='infantil' ? '0.8' : '1'}
-          textDecoration={categoryId ==='infantil' ? 'underline' : ''}
+          opacity={categoryId === 'infantil' ? '0.8' : '1'}
+          textDecoration={categoryId === 'infantil' ? 'underline' : ''}
         >
           Infantil
         </Center>
       </Link>
+      <ToggleColorMode />
     </>
   )
 }

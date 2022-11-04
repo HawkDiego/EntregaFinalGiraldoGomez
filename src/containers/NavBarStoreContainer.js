@@ -4,14 +4,17 @@ import { FlexNavMobile } from '../components/NavFlexMobile'
 import { NavFlexDesk } from '../components/NavFlexDesk'
 import { CartNav } from '../components/CartNav'
 import { Link, Outlet } from 'react-router-dom'
+import { ToggleColorMode } from '../components/ToggleColorMode'
+import { useColorMode } from '@chakra-ui/react'
 
 const NavBarStore = () => {
+  const { colorMode } = useColorMode()
   return (
     <>
       <Grid
-        bg='whitesmoke'
-        templateColumns={'60% 1fr'}
-        color='#525151'
+        bg={colorMode === 'dark' ? 'gray.700' : 'whitesmoke'}
+        templateColumns={'2fr  1fr'}
+        color={colorMode === 'dark' ? 'whitesmoke' : '#525151'}
         alignItems='center'
         as='nav'
       >
@@ -27,17 +30,17 @@ const NavBarStore = () => {
         </Flex>
 
         <Flex display={['none', 'none', 'flex']} justify='center' gap={5}>
-          <Grid templateColumns='repeat(3, 1fr)' gap={5}>
+          <Grid templateColumns='repeat(4, 1fr)' gap={5}>
             <NavFlexDesk />
           </Grid>
           <CartNav />
         </Flex>
 
         <FlexNavMobile />
+        
       </Grid>
 
       <Outlet />
-
     </>
   )
 }

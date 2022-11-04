@@ -1,17 +1,18 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import { ChakraProvider } from '@chakra-ui/react'
-import theme from './theme'
+import { ChakraProvider, ColorModeScript } from '@chakra-ui/react'
 import NavBarStore from './containers/NavBarStoreContainer'
 import ItemContainer from './containers/ItemContainer'
 import ProductDetailContainer from './containers/ProductDetailContainer'
 import { ProductsCategoryContainer } from './containers/ProductsCategoryContainer'
 import { PageNotFoundContainer } from './containers/PageNotFoundContainer'
+import theme from './context/themeContext'
 
 function App() {
   return (
     <div className='app'>
       <ChakraProvider theme={theme}>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
         <BrowserRouter>
           <Routes>
             <Route path='/' element={<NavBarStore />}>

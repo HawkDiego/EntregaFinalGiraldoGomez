@@ -32,7 +32,6 @@ export const MenuTogle = () => {
         }}
         variant='ghost'
         as='a'
-        my={5}
         w='100%'
       >
         <Text fontSize={25}>{menu ? <MdMenu /> : <MdClose />}</Text>

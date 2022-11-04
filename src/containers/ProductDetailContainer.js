@@ -37,7 +37,7 @@ const ProductDetailContainer = () => {
                 <Box>{product.name}</Box>
                 <Box>{product.price}</Box>
               </Flex>
-              <Box fontSize='20px' mb='8px' color='#525151' fontWeight='normal'>
+              <Box fontSize='20px' mb='8px' fontWeight='normal'>
                 {product.category}
               </Box>
               <Contador />
