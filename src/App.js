@@ -7,30 +7,33 @@ import ProductDetailContainer from './containers/ProductDetailContainer'
 import { ProductsCategoryContainer } from './containers/ProductsCategoryContainer'
 import { PageNotFoundContainer } from './containers/PageNotFoundContainer'
 import theme from './context/themeContext'
+import { CartProvider } from './context/cartContext'
 
 function App() {
   return (
     <div className='app'>
       <ChakraProvider theme={theme}>
-        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
-        <BrowserRouter>
-          <Routes>
-            <Route path='/' element={<NavBarStore />}>
-              <Route index element={<ItemContainer />} />
-              <Route
-                path={'product/:productId'}
-                element={<ProductDetailContainer />}
-              />
-              <Route
-                path={'category/:categoryId'}
-                element={<ProductsCategoryContainer />}
-              />
-              <Route path={'cart'} />
-              <Route path={'checkout'} />
-            </Route>
-            <Route path='*' element={<PageNotFoundContainer />} />
-          </Routes>
-        </BrowserRouter>
+        <CartProvider>
+          <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+          <BrowserRouter>
+            <Routes>
+              <Route path='/' element={<NavBarStore />}>
+                <Route index element={<ItemContainer />} />
+                <Route
+                  path={'product/:productId'}
+                  element={<ProductDetailContainer />}
+                />
+                <Route
+                  path={'category/:categoryId'}
+                  element={<ProductsCategoryContainer />}
+                />
+                <Route path={'cart'} />
+                <Route path={'checkout'} />
+              </Route>
+              <Route path='*' element={<PageNotFoundContainer />} />
+            </Routes>
+          </BrowserRouter>
+        </CartProvider>
       </ChakraProvider>
     </div>
   )

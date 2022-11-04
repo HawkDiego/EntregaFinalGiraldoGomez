@@ -3,6 +3,7 @@ import { MenuTogle } from './MenuTogle'
 import { BiCart } from 'react-icons/bi'
 import { Flex, Button, Box } from '@chakra-ui/react'
 import { ToggleColorMode } from './ToggleColorMode'
+import { CartNav } from './CartNav'
 
 export const FlexNavMobile = () => {
   return (
@@ -14,7 +15,7 @@ export const FlexNavMobile = () => {
         w='100%'
         fontSize={25}
       >
-        <BiCart />
+        <CartNav />
       </Box>
       <ToggleColorMode />
       <MenuTogle />
