@@ -4,7 +4,6 @@ import { FlexNavMobile } from '../components/NavFlexMobile'
 import { NavFlexDesk } from '../components/NavFlexDesk'
 import { CartNav } from '../components/CartNav'
 import { Link, Outlet } from 'react-router-dom'
-import { ToggleColorMode } from '../components/ToggleColorMode'
 import { useColorMode } from '@chakra-ui/react'
 
 const NavBarStore = () => {
@@ -29,7 +28,7 @@ const NavBarStore = () => {
           </Link>
         </Flex>
 
-        <Flex display={['none', 'none', 'flex']} justify='center' gap={5}>
+        <Flex display={['none', 'none', 'flex']} justify='center' gap={5} align='center'>
           <Grid templateColumns='repeat(4, 1fr)' gap={5}>
             <NavFlexDesk />
           </Grid>

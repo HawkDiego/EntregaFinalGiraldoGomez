@@ -15,6 +15,7 @@ export const CartNav = () => {
       _hover={{
         opacity: '0.8',
       }}
+      mr={['', '', '25px', '']}
     >
       <BiCart />
     </Center>
