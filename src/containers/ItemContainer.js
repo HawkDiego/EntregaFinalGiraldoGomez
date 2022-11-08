@@ -1,19 +1,13 @@
 import React from 'react'
-import { Box, Center, useColorMode, useColorModeValue } from '@chakra-ui/react'
+import { Box, Center, useColorModeValue } from '@chakra-ui/react'
 import { Item } from '../components/Item'
 import { products } from '../api/getProducts'
 
 const ItemContainer = () => {
-  const { colorMode } = useColorMode()
-  const colorValue = useColorModeValue( '#525151', 'whitesmoke')
+  const colorValue = useColorModeValue('#525151', 'whitesmoke')
   return (
     <>
-      <Center
-        fontSize='40px'
-        mt={10}
-        fontWeight='bold'
-        color={colorValue}
-      >
+      <Center fontSize='40px' mt={10} fontWeight='bold' color={colorValue}>
         Todos los productos
       </Center>
       <Box

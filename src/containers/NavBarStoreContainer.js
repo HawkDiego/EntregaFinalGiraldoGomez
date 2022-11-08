@@ -1,4 +1,4 @@
-import { Grid, Image, Flex } from '@chakra-ui/react'
+import { Grid, Image, Flex, Input } from '@chakra-ui/react'
 import React from 'react'
 import { FlexNavMobile } from '../components/NavFlexMobile'
 import { NavFlexDesk } from '../components/NavFlexDesk'
@@ -28,7 +28,12 @@ const NavBarStore = () => {
           </Link>
         </Flex>
 
-        <Flex display={['none', 'none', 'flex']} justify='center' gap={5} align='center'>
+        <Flex
+          display={['none', 'none', 'flex']}
+          justify='center'
+          gap={5}
+          align='center'
+        >
           <Grid templateColumns='repeat(4, 1fr)' gap={5}>
             <NavFlexDesk />
           </Grid>
@@ -36,7 +41,6 @@ const NavBarStore = () => {
         </Flex>
 
         <FlexNavMobile />
-        
       </Grid>
 
       <Outlet />

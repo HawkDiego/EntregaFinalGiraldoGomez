@@ -1,4 +1,4 @@
-import { Box, Center, useColorMode } from '@chakra-ui/react'
+import { Box, useColorMode } from '@chakra-ui/react'
 import React from 'react'
 import { BsSun } from 'react-icons/bs'
 import { FaMoon } from 'react-icons/fa'

@@ -5,7 +5,7 @@ import { getProductsById } from '../api/getProducts'
 import { Contador } from '../components/Contador'
 
 const ProductDetailContainer = () => {
-  const productId = useParams().productId
+  const {productId } = useParams()
   const [product, setProduct] = useState(null)
 
   useEffect(() => {

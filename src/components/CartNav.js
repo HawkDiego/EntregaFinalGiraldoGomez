@@ -1,9 +1,12 @@
-import { Box, Center, Flex } from '@chakra-ui/react'
+import { Box, Flex } from '@chakra-ui/react'
 import { BiCart } from 'react-icons/bi'
 
 import React from 'react'
+import { useCartContext } from '../context/cartContext'
 
 export const CartNav = () => {
+  const { cartProducts } = useCartContext()
+
   return (
     <>
       <Flex
@@ -22,7 +25,7 @@ export const CartNav = () => {
         <Box w='64px' display='flex' position='relative'>
           <BiCart />
           <Box fontSize='20px' position='absolute' left='30' bottom='2'>
-           1
+            {cartProducts.length}
           </Box>
         </Box>
       </Flex>
