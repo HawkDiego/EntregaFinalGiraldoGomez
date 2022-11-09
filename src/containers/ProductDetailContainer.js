@@ -5,7 +5,8 @@ import { getProductsById } from '../api/getProducts'
 import { Contador } from '../components/Contador'
 
 const ProductDetailContainer = () => {
-  const {productId } = useParams()
+  const [contador, setConatdor] = useState(0)
+  const { productId } = useParams()
   const [product, setProduct] = useState(null)
 
   useEffect(() => {
@@ -40,7 +41,7 @@ const ProductDetailContainer = () => {
               <Box fontSize='20px' mb='8px' fontWeight='normal'>
                 {product.category}
               </Box>
-              <Contador />
+              <Contador contador={contador} setConatdor={setConatdor} />
 
               <Flex justify='center' margin={5}>
                 <Button w='80%' textAlign='center'>

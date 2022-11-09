@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Flex, Image, Box, Button } from '@chakra-ui/react'
+import { Grid, Flex, Image, Box } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { AddToCart } from './AddToCart'
 
