@@ -2,6 +2,7 @@ import { Box, Grid, Flex, Image, Button, Spinner } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProductsById } from '../api/getProducts'
+import { AddToCart } from '../components/AddToCart'
 import { Contador } from '../components/Contador'
 
 const ProductDetailContainer = () => {
@@ -44,9 +45,7 @@ const ProductDetailContainer = () => {
               <Contador contador={contador} setConatdor={setConatdor} />
 
               <Flex justify='center' margin={5}>
-                <Button w='80%' textAlign='center'>
-                  Añadir al carrito
-                </Button>
+                <AddToCart product={product} quantity={contador} />
               </Flex>
             </Flex>
           </Grid>
