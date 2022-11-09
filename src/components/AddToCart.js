@@ -7,7 +7,7 @@ import { useParams } from 'react-router-dom'
 export const AddToCart = ({ product, quantity }) => {
   const toast = useToast()
   const params = useParams()
-  const { addProduct, cartProducts } = useCartContext()
+  const { addProduct} = useCartContext()
 
   const handlerClick = (e) => {
     e.preventDefault()
@@ -20,7 +20,7 @@ export const AddToCart = ({ product, quantity }) => {
       position: 'top',
     })
   }
-  console.log(cartProducts)
+
   return (
     <>
       {params.productId ? (

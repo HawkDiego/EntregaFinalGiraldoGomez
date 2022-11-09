@@ -10,28 +10,27 @@ export const CartNav = () => {
 
   return (
     <>
-      <Link to='/cart'>
-        <Flex
-          as='a'
-          variant='ghost'
-          aria-label='cart'
-          my={5}
-          w='50%'
-          fontSize='30px'
-          _hover={{
-            opacity: '0.8',
-          }}
-          mr={['', '', '25px', '']}
-          justifyContent='center'
-        >
+      <Flex
+        variant='ghost'
+        aria-label='cart'
+        my={5}
+        w='50%'
+        fontSize='30px'
+        _hover={{
+          opacity: '0.8',
+        }}
+        mr={['', '', '25px', '']}
+        justifyContent='center'
+      >
+        <Link to='/cart'>
           <Box w='64px' display='flex' position='relative'>
             <BiCart />
             <Box fontSize='20px' position='absolute' left='30' bottom='2'>
               {cartProducts.length > 0 ? cartProducts.length : null}
             </Box>
           </Box>
-        </Flex>
-      </Link>
+        </Link>
+      </Flex>
     </>
   )
 }

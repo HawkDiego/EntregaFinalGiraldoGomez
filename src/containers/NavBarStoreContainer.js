@@ -19,7 +19,7 @@ const NavBarStore = () => {
         <Flex align='center' m='10px 0px 10px 25px'>
           <Link to='/'>
             <Image
-              src='/icon.jpg'
+              src='/icon.ico'
               objectFit='cover'
               boxSize={['70px', '70px', '80px']}
               borderRadius='20'
