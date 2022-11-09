@@ -1,10 +1,9 @@
-import { Grid, Image, Flex, Input } from '@chakra-ui/react'
+import { Grid, Image, Flex, useColorMode } from '@chakra-ui/react'
 import React from 'react'
 import { FlexNavMobile } from '../components/NavFlexMobile'
 import { NavFlexDesk } from '../components/NavFlexDesk'
 import { CartNav } from '../components/CartNav'
 import { Link, Outlet } from 'react-router-dom'
-import { useColorMode } from '@chakra-ui/react'
 
 const NavBarStore = () => {
   const { colorMode } = useColorMode()

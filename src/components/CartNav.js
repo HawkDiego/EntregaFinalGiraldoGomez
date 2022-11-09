@@ -25,7 +25,7 @@ export const CartNav = () => {
         <Box w='64px' display='flex' position='relative'>
           <BiCart />
           <Box fontSize='20px' position='absolute' left='30' bottom='2'>
-            {cartProducts.length}
+            {cartProducts.length > 0 ? cartProducts.length : null}
           </Box>
         </Box>
       </Flex>
