@@ -9,7 +9,7 @@ export const Contador = ({contador, setConatdor}) => {
   }
 
   const handlerLess = () => {
-    contador > 0 ? setConatdor(contador - 1) : setConatdor(0)
+    contador > 1 ? setConatdor(contador - 1) : setConatdor(1)
   }
 
   return (

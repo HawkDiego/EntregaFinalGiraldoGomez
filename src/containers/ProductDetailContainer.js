@@ -6,7 +6,7 @@ import { AddToCart } from '../components/AddToCart'
 import { Contador } from '../components/Contador'
 
 const ProductDetailContainer = () => {
-  const [contador, setConatdor] = useState(0)
+  const [contador, setConatdor] = useState(1)
   const { productId } = useParams()
   const [product, setProduct] = useState(null)
 
