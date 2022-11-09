@@ -16,7 +16,7 @@ export const CartItem = ({ product, deleteProduct }) => {
       fontSize='20px'
     >
       <Link to={`/product/${product.id}`}>
-        <Box w={['100px','100%']} >
+        <Box w={['120px','100%']} >
           <Image
             src={product.img}
             alt='ropa'
