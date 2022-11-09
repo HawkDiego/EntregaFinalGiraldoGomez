@@ -1,4 +1,4 @@
-import { Box, Grid, Flex, Image, Button, Spinner } from '@chakra-ui/react'
+import { Box, Grid, Flex, Image, Spinner } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getProductsById } from '../api/getProducts'

@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Grid, Button, Center } from '@chakra-ui/react'
 import { BsPlus, BsDash } from 'react-icons/bs'
 
-export const Contador = ({contador, setConatdor}) => {
-  
+export const Contador = ({ contador, setConatdor }) => {
   const handlerPlus = () => {
     setConatdor(contador + 1)
   }

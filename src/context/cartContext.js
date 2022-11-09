@@ -9,7 +9,6 @@ export const CartProvider = ({ children }) => {
 
   const addProduct = (product, quantity) => {
     const productToAdd = cartProducts?.find((item) => item.id === product.id)
-
     if (productToAdd) {
       const newCartProducts = cartProducts.map((item) => {
         if (item.id === product.id) {
