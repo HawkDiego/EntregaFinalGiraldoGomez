@@ -14,7 +14,7 @@ export const CartQuantityController = ({ product }) => {
   }
 
   return (
-    <Grid templateColumns={'1fr 1fr 1fr'}>
+    <Grid templateColumns={'1fr 1fr 1fr'} >
       <Button
         fontSize='30px'
         variant='ghost'
@@ -24,7 +24,7 @@ export const CartQuantityController = ({ product }) => {
         <BsDash />
       </Button>
       <Center>{product.quantity}</Center>
-      <Button fontSize='30px' variant='ghost' onClick={handlerPlus}>
+      <Button fontSize='20px' variant='ghost' onClick={handlerPlus} size='md'>
         <BsPlus />
       </Button>
     </Grid>

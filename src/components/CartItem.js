@@ -1,4 +1,4 @@
-import { Box, Button, Grid, Image } from '@chakra-ui/react'
+import { Box, Button, Grid, GridItem, Image } from '@chakra-ui/react'
 import React from 'react'
 import { VscChromeClose } from 'react-icons/vsc'
 import { Link } from 'react-router-dom'
@@ -10,19 +10,21 @@ export const CartItem = ({ product, deleteProduct }) => {
   }
   return (
     <Grid
-      templateColumns='auto 1fr auto'
+      templateColumns='auto auto auto'
       mt='20'
-      border='solid 1px'
+      border='solid 2px'
       fontSize='20px'
     >
       <Link to={`/product/${product.id}`}>
-        <Image
-          src={product.img}
-          alt='ropa'
-          w='250px'
-          h='250px'
-          borderRadius='4px'
-        />
+        <Box w={['100px','100%']} >
+          <Image
+            src={product.img}
+            alt='ropa'
+            w='250px'
+            h={['170px', '250px']}
+            borderRadius='4px'
+          />
+        </Box>
       </Link>
       <Grid
         templateRows='auto 1fr 1fr'
@@ -31,7 +33,12 @@ export const CartItem = ({ product, deleteProduct }) => {
         ml='30px'
       >
         <Link to={`/product/${product.id}`}>
-          <Box alignSelf='flex-start' fontWeight='bold' fontSize='30px'>
+          <Box
+            alignSelf='flex-start'
+            fontWeight='bold'
+            fontSize={['20px', '30px']}
+            mt='5px'
+          >
             {product.name}
           </Box>
         </Link>
@@ -39,11 +46,15 @@ export const CartItem = ({ product, deleteProduct }) => {
           <Box>{product.category}</Box>
           <Box>{product.price}</Box>
         </Box>
-        <CartQuantityController product={product} />
+        <GridItem crowSpan={4}>
+          <CartQuantityController product={product} />
+        </GridItem>
       </Grid>
-      <Button m='5px' variant='ghost' onClick={handlerDelete}>
-        <VscChromeClose />
-      </Button>
+      <GridItem>
+        <Button m='5px' variant='ghost' onClick={handlerDelete}>
+          <VscChromeClose />
+        </Button>
+      </GridItem>
     </Grid>
   )
 }
