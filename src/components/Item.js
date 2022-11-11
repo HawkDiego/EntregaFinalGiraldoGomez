@@ -25,7 +25,7 @@ export const Item = ({ product }) => {
           <Flex direction='column' m='0 5px' fontSize='20px' fontWeight='bold'>
             <Flex justify='space-between' mt='10px' mb='0'>
               <Box>{product.name}</Box>
-              <AddToCart product={product} quantity={1}/>
+              <AddToCart product={product} quantity={1} />
             </Flex>
             <Box fontSize='20px' mb='8px' fontWeight='normal'>
               {product.category}

@@ -1,9 +1,15 @@
-import React from 'react'
-import { Box, Center, useColorModeValue } from '@chakra-ui/react'
+import React, { useEffect, useState } from 'react'
+import { Box, Center, Spinner, useColorModeValue } from '@chakra-ui/react'
 import { Item } from '../components/Item'
-import { products } from '../api/getProducts'
+import { getProducts } from '../api/getProducts'
 
 const ItemContainer = () => {
+  const [products, setProducts] = useState(null)
+
+  useEffect(() => {
+    getProducts().then((data) => setProducts(data))
+  }, [])
+
   const colorValue = useColorModeValue('#525151', 'whitesmoke')
   return (
     <>
@@ -21,9 +27,13 @@ const ItemContainer = () => {
         display={['flex', 'flex', 'flex', 'grid']}
         gridTemplateColumns={['', '', '', 'repeat(3, auto)']}
       >
-        {products.map((product) => (
-          <Item product={product} key={product.id} />
-        ))}
+        {products ? (
+          products?.map((product) => (
+            <Item product={product} key={product.id} />
+          ))
+        ) : (
+          <Spinner />
+        )}
       </Box>
     </>
   )

@@ -1,81 +1,42 @@
-export const products = [
-  {
-    name: 'Buso gris',
-    category: 'hombre',
-    id: '1',
-    price: 10,
-    img: '/hombre/buso-gris.jpeg',
-  },
-  {
-    name: 'Dino buso',
-    category: 'mujer',
-    id: '2',
-    price: 10,
-    img: '/mujer/buso-dino.jpeg',
-  },
-  {
-    name: 'Buso de oso',
-    category: 'mujer',
-    id: '3',
-    price: 10,
-    img: '/mujer/buso-oso.jpg',
-  },
-  {
-    name: 'Buso militar',
-    category: 'hombre',
-    id: '4',
-    price: 10,
-    img: '/hombre/buso-militar.jpeg',
-  },
-  {
-    name: 'Buso blanco',
-    category: 'infantil',
-    id: '5',
-    price: 10,
-    img: '/infantil/buso-blanco.webp',
-  },
-  {
-    name: 'Buso negro',
-    category: 'infantil',
-    id: '6',
-    price: 10,
-    img: '/infantil/buso-negro.webp',
-  },
-  {
-    name: 'Camibuso',
-    category: 'hombre',
-    id: '7',
-    price: 10,
-    img: '/hombre/Camibuso.jpeg',
-  },
-  {
-    name: 'Buso de gato',
-    category: 'mujer',
-    id: '8',
-    price: 10,
-    img: '/mujer/buso-gato.jpeg',
-  },
-  {
-    name: 'Conjunto infantil',
-    category: 'infantil',
-    id: '9',
-    price: 10,
-    img: '/infantil/conjunto-infantil.webp',
-  },
-]
+import {
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+  query,
+  where,
+} from 'firebase/firestore'
+import { db } from './config'
 
-export const getProductsById = (id) =>
-  new Promise((res, rej) => {
-    const response = products.find((product) => product.id === id)
-    setTimeout(() => {
-      res(response)
-    }, 1000)
-  })
+export const getProducts = async () => {
+  const productsRef = collection(db, 'items')
+  const products = []
 
-export const getProductsByCategory = (category) =>
-  new Promise((res, rej) => {
-    const response = products.filter((product) => product.category === category)
-    setTimeout(() => {
-      res(response)
-    }, 1000)
+  const querySnapshot = await getDocs(productsRef)
+  querySnapshot.forEach((doc) => {
+    products.push({ ...doc.data(), id: doc.id })
   })
+  return products
+}
+
+export const getProductsById = async (id) => {
+  const document = doc(db, 'items', id)
+  const docSnap = await getDoc(document)
+  if (docSnap.exists()) {
+    return { id: docSnap.id, ...docSnap.data() }
+  }
+  return null
+}
+
+export const getProductsByCategory = async (category) => {
+  const docSnap = query(
+    collection(db, 'items'),
+    where('category', '==', category)
+  )
+  const productList = []
+  const querySnapshot = await getDocs(docSnap)
+  querySnapshot.forEach((doc) => {
+    productList.push({ ...doc.data(), id: doc.id })
+  })
+  return productList
+}
