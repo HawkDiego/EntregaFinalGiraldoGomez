@@ -8,23 +8,22 @@ export const CartItem = ({ product, deleteProduct }) => {
   const handlerDelete = () => {
     deleteProduct(product)
   }
+
   return (
     <Grid
-      templateColumns='auto auto auto'
+      templateColumns='repeat(3, auto)'
       mt='20'
       border='solid 2px'
-      fontSize='20px'
+      fontSize={['15px', '20px']}
     >
       <Link to={`/product/${product.id}`}>
-        <Box w={['120px','100%']} >
-          <Image
-            src={product.img}
-            alt='ropa'
-            w='250px'
-            h={['170px', '250px']}
-            borderRadius='4px'
-          />
-        </Box>
+        <Image
+          src={product.img}
+          alt='ropa'
+          w={['160px', '250px']}
+          h={['170px', '250px']}
+          borderRadius='4px'
+        />
       </Link>
       <Grid
         templateRows='auto 1fr 1fr'
@@ -43,18 +42,17 @@ export const CartItem = ({ product, deleteProduct }) => {
           </Box>
         </Link>
         <Box>
-          <Box>{product.category}</Box>
-          <Box>{product.price}</Box>
+          <Box>Cantidad: {product.quantity}</Box>
+          <Box>Precio unitario: {product.price} $</Box>
+          <Box>subtotal unitario: {product.price * product.quantity} $</Box>
         </Box>
         <GridItem crowSpan={4}>
           <CartQuantityController product={product} />
         </GridItem>
       </Grid>
-      <GridItem>
-        <Button m='5px' variant='ghost' onClick={handlerDelete}>
-          <VscChromeClose />
-        </Button>
-      </GridItem>
+      <Button m='5px' variant='ghost' onClick={handlerDelete} size='xs'>
+        <VscChromeClose />
+      </Button>
     </Grid>
   )
 }

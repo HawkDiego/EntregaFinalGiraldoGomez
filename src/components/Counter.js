@@ -2,13 +2,13 @@ import React from 'react'
 import { Grid, Button, Center } from '@chakra-ui/react'
 import { BsPlus, BsDash } from 'react-icons/bs'
 
-export const Contador = ({ contador, setConatdor }) => {
+export const Counter = ({ counter, setCounter }) => {
   const handlerPlus = () => {
-    setConatdor(contador + 1)
+    setCounter(counter + 1)
   }
 
   const handlerLess = () => {
-    contador > 1 ? setConatdor(contador - 1) : setConatdor(1)
+    counter > 1 ? setCounter(counter - 1) : setCounter(1)
   }
 
   return (
@@ -16,7 +16,7 @@ export const Contador = ({ contador, setConatdor }) => {
       <Button fontSize='30px' variant='ghost' onClick={handlerLess}>
         <BsDash />
       </Button>
-      <Center>{contador}</Center>
+      <Center>{counter}</Center>
       <Button fontSize='30px' variant='ghost' onClick={handlerPlus}>
         <BsPlus />
       </Button>

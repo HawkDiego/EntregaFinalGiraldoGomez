@@ -30,7 +30,7 @@ export const Item = ({ product }) => {
             <Box fontSize='20px' mb='8px' fontWeight='normal'>
               {product.category}
             </Box>
-            <Box>{product.price}</Box>
+            <Box>{product.price} $</Box>
           </Flex>
         </Link>
       </Grid>
