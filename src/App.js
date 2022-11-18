@@ -10,6 +10,7 @@ import { CartContainer } from './containers/CartContainer'
 import theme from './context/themeContext'
 import { CartProvider } from './context/cartContext'
 
+
 function App() {
   return (
     <div className='app'>
@@ -28,8 +29,7 @@ function App() {
                   path={'category/:categoryId'}
                   element={<ProductsCategoryContainer />}
                 />
-                <Route path={'cart'} element={<CartContainer/>}/>
-                <Route path={'checkout'} />
+                <Route path={'cart'} element={<CartContainer />} />
               </Route>
               <Route path='*' element={<PageNotFoundContainer />} />
             </Routes>
