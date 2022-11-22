@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Box, Center, Spinner, useColorModeValue } from '@chakra-ui/react'
 import { Item } from '../components/Item'
-import { getProducts } from '../api/getProducts'
+import { getProducts } from '../api/products'
 
 const ItemContainer = () => {
   const [products, setProducts] = useState(null)

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProductsByCategory } from '../api/getProducts'
+import { getProductsByCategory } from '../api/products'
 import { Item } from '../components/Item'
 import { Box, Center, Spinner, useColorMode } from '@chakra-ui/react'
 

@@ -11,10 +11,11 @@ export const CartItem = ({ product, deleteProduct }) => {
 
   return (
     <Grid
-      templateColumns='repeat(3, auto)'
+      templateColumns={['repeat(3, auto)','1fr 1fr auto']}
       mt='20'
       border='solid 2px'
       fontSize={['15px', '20px']}
+      
     >
       <Link to={`/product/${product.id}`}>
         <Image

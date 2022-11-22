@@ -9,19 +9,16 @@ import {
   ModalFooter,
   Box,
 } from '@chakra-ui/react'
-import { useState } from 'react'
+import { useCartForm } from '../hooks/useCartForm'
+
 
 export const CartForm = ({ onClose, total }) => {
-  const [form, setForm] = useState({ name: '', email: '', adress: '' })
+  const { handlerSubmit, handlerChange, handlerClick } = useCartForm(total)
 
-  const handlerChange = (e) => {
-    setForm({ ...form, [e.target.id]: e.target.value })
-    console.log(form)
-  }
   return (
     <>
-      <Grid as='form'>
-        <ModalBody as='form'>
+      <Grid as='form' onSubmit={(e) => handlerSubmit(e)}>
+        <ModalBody>
           <FormControl
             display='flex'
             flexDir={'column'}
@@ -32,10 +29,14 @@ export const CartForm = ({ onClose, total }) => {
             <Input type='text' id='name' onChange={(e) => handlerChange(e)} />
 
             <FormLabel fontWeight='bold'>Correo</FormLabel>
-            <Input type='email' id='email' />
+            <Input type='email' id='email' onChange={(e) => handlerChange(e)} />
 
-            <FormLabel fontWeight='bold'>Direccion</FormLabel>
-            <Input type='text' id='adress' />
+            <FormLabel fontWeight='bold'>Telefono</FormLabel>
+            <Input
+              type='number'
+              id='phone'
+              onChange={(e) => handlerChange(e)}
+            />
 
             <Box alignSelf='flex-end' fontWeight='bold' fontSize='20px'>
               Total: {total}$
@@ -47,7 +48,7 @@ export const CartForm = ({ onClose, total }) => {
           <Button colorScheme='red' mr={3} onClick={onClose}>
             Close
           </Button>
-          <Button variant='ghost' type='submit'>
+          <Button variant='ghost' type='submit' onClick={handlerClick}>
             Comprar
           </Button>
         </ModalFooter>

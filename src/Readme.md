@@ -1,0 +1,11 @@
+Bienvenidos a CoderShop.
+
+Bueno, hablando del enfoque que le quise dar el proyecto fue hacer una página bastante minimalista  que sea intuitiva y cómoda para el usuario, también quise hacer que sea 100% resposinve, pues siento que gran parte de los usuarios de aplicaciones web vienen desde mobile siguiendo esta idea empece creando la página versión mobile y luego adaptándola a versión de escritorio. 
+
+Para darle los estilos a la página me apoyé en https://chakra-ui.com, pues ya tenía conocimientos en la librería y siento que es sencillo trabajar con esta librería para lo que tenía en mente, pues su manera de hacer las cosas responsive me recorta bastante el camino además es más sencillo hacer un modo nocturno para la aplicación, hablando del modo nocturno quise poner en marcha esa idea, pues desde mi experiencia navegando páginas web es bastante más cómodo cuando las aplicaciones web te permiten elegir un modo nocturno, pues la gran mayoría de los usuarios prefieren este modo y esto hace que la experiencia de usuario mejor mucho. 
+
+Continuando con el apartado de las carpetas, el cual trate de llevar de la mano con las rutas, pues en cada container va una página, de manera más clara trate de que por cada container hubiera una página de navegación y en el sistema de rutas me base en gran parte de las clases. Para finalizar con los nombres de los componentes usé como primera parte del nombre a donde están enfocados cart, nav, etc. Luego la funcionalidad que tienen, decidí hacer esto así porque siento que es más organizado hacer el seguimiento del código, pues primero buscas el nombre de lo que quieres leer y luego su funcionalidad.
+
+Siguiendo con el contexto del carro también me apoyé de lo visto en las clases y seguí las ideas que el profesor propuso en las clases.
+
+Y para finalizar voy a hablar de Firebase, el cual trate de hacer los más sencillo posible, pues no tengo mucha idea de la librería y el curso no profundiza mucho en ella, en cuanto a otras librerías decidí hacer todo a pie, pues mi idea con el proyecto era poner en práctica todo lo de React sin preocuparme mucho por los estilos.

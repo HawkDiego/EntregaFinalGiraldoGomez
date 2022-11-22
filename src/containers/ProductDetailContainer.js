@@ -1,7 +1,7 @@
 import { Box, Grid, Flex, Image, Spinner } from '@chakra-ui/react'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { getProductsById } from '../api/getProducts'
+import { getProductsById } from '../api/products'
 import { AddToCart } from '../components/AddToCart'
 import { Counter } from '../components/Counter'
 
