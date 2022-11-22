@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { useCartContext } from '../context/cartContext'
-import { addOrder, getOrders } from '../api/orders'
+import { addOrder } from '../api/orders'
 import { useNavigate } from 'react-router-dom'
 import { useToast } from '@chakra-ui/react'
 
