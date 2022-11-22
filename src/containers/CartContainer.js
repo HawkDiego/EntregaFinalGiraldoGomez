@@ -14,7 +14,7 @@ export const CartContainer = () => {
   useEffect(() => {
     getOrders().then((data) => setAllOrders(data))
   }, [])
-  console.log(allOrders)
+  
   return (
     <>
       {cartProducts.length > 0 ? (
