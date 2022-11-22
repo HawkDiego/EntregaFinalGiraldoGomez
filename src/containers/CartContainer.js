@@ -1,15 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Flex, Center, Button, Icon, useDisclosure } from '@chakra-ui/react'
 import { CartError } from '../components/CartError'
 import { CartItem } from '../components/CartItem'
 import { useCartContext } from '../context/cartContext'
 import { MdDelete } from 'react-icons/md'
 import { CartCheckOutModal } from '../components/CartCheckOutModal'
+import { getOrders } from '../api/orders'
 
 export const CartContainer = () => {
   const { cartProducts, deleteProduct, getTotal, cleanCart } = useCartContext()
   const { isOpen, onOpen, onClose } = useDisclosure()
-
+  const [allOrders, setAllOrders] = useState(null)
+  useEffect(() => {
+    getOrders().then((data) => setAllOrders(data))
+  }, [])
+  console.log(allOrders)
   return (
     <>
       {cartProducts.length > 0 ? (
@@ -29,7 +34,6 @@ export const CartContainer = () => {
           <Center gap={2}>
             <Button w='100px' onClick={onOpen}>
               Checkout
-              
             </Button>
 
             <Button w='100px' onClick={cleanCart} colorScheme='red'>
@@ -40,7 +44,12 @@ export const CartContainer = () => {
       ) : (
         <CartError />
       )}
-      <CartCheckOutModal isOpen={isOpen} onClose={onClose}  total={getTotal()}/>
+      <CartCheckOutModal
+        isOpen={isOpen}
+        onClose={onClose}
+        total={getTotal()}
+        allOrders={allOrders}
+      />
     </>
   )
 }

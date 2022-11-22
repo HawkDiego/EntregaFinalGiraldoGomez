@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   FormControl,
   FormLabel,
@@ -11,9 +11,11 @@ import {
 } from '@chakra-ui/react'
 import { useCartForm } from '../hooks/useCartForm'
 
-
-export const CartForm = ({ onClose, total }) => {
-  const { handlerSubmit, handlerChange, handlerClick } = useCartForm(total)
+export const CartForm = ({ onClose, total, allOrders }) => {
+  const { handlerSubmit, handlerChange, handlerClick } = useCartForm(
+    total,
+    allOrders
+  )
 
   return (
     <>

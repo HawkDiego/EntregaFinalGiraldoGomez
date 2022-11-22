@@ -6,6 +6,6 @@ Para darle los estilos a la página me apoyé en https://chakra-ui.com, pues ya 
 
 Continuando con el apartado de las carpetas, el cual trate de llevar de la mano con las rutas, pues en cada container va una página, de manera más clara trate de que por cada container hubiera una página de navegación y en el sistema de rutas me base en gran parte de las clases. Para finalizar con los nombres de los componentes usé como primera parte del nombre a donde están enfocados cart, nav, etc. Luego la funcionalidad que tienen, decidí hacer esto así porque siento que es más organizado hacer el seguimiento del código, pues primero buscas el nombre de lo que quieres leer y luego su funcionalidad.
 
-Siguiendo con el contexto del carro también me apoyé de lo visto en las clases y seguí las ideas que el profesor propuso en las clases.
+Siguiendo con el contexto del carro también me apoyé de lo visto en las clases y seguí las ideas que el profesor propuso en las clases y también para la parte de los items que se muestran en el cart decidí que solo se vieran cuantos items diferentes hay y no su cantidad, pues no me parece agradable para la experiencia de usuario ver qué cantidad de items tienes y no cuantos tipos diferentes.
 
 Y para finalizar voy a hablar de Firebase, el cual trate de hacer los más sencillo posible, pues no tengo mucha idea de la librería y el curso no profundiza mucho en ella, en cuanto a otras librerías decidí hacer todo a pie, pues mi idea con el proyecto era poner en práctica todo lo de React sin preocuparme mucho por los estilos.

@@ -1,10 +1,10 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useCartContext } from '../context/cartContext'
-import { addOrder } from '../api/orders'
+import { addOrder, getOrders } from '../api/orders'
 import { useNavigate } from 'react-router-dom'
 import { useToast } from '@chakra-ui/react'
 
-export const useCartForm = (total) => {
+export const useCartForm = (total, allOrders) => {
   const [form, setForm] = useState({ name: '', email: '', phone: 0 })
   const [order, setOrder] = useState({})
   const { cartProducts, cleanCart } = useCartContext()
@@ -18,19 +18,36 @@ export const useCartForm = (total) => {
     price,
   }))
 
+  const emailValid = () => {
+    let condition = allOrders?.map((item) => {
+      if (item.buyer.email === order.buyer.email) return false
+      return true
+    })
+    return condition.includes(false)
+  }
+
   const handlerSubmit = (e) => {
     e.preventDefault()
-
-    addOrder(order)
-    cleanCart()
-    navigate('/')
-    toast({
-      title: 'Orden creada',
-      description: "Tu orden fue creada con exito",
-      status: 'success',
-      duration: 9000,
-      isClosable: true,
-    })
+    if (emailValid()) {
+      addOrder(order)
+      cleanCart()
+      navigate('/')
+      toast({
+        title: 'Orden creada',
+        description: 'Tu orden fue creada con exito',
+        status: 'success',
+        duration: 9000,
+        isClosable: true,
+      })
+    } else {
+      toast({
+        title: 'Correo no valido',
+        description: 'Este correo ya tiene una orden en progreso',
+        status: 'error',
+        duration: 9000,
+        isClosable: true,
+      })
+    }
   }
 
   const handlerChange = (e) => {
@@ -45,7 +62,7 @@ export const useCartForm = (total) => {
         email: form.email,
       },
       total,
-      status:'create'
+      status: 'create',
     })
   }
 
